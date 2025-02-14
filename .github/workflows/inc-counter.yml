@@ -6,6 +6,7 @@ name: Increment Counter
 
 on:
   push: {}
+  workflow_dispatch:
 
 jobs:
   inc_counter:
