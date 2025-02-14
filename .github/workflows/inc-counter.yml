@@ -1,9 +1,5 @@
 name: Increment Counter
 
-#on:
-#  schedule:
-#    - cron: '*/10 * * * *'
-
 on:
   workflow_dispatch:
 
