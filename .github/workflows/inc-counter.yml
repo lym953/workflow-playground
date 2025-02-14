@@ -6,22 +6,23 @@ name: Increment Counter
 
 on:
   push: {}
-  
+
 jobs:
   inc_counter:
     runs-on: [ubuntu-latest]
     steps:
-    - name: do checkout
-      uses: actions/checkout@v1
-      with:
-        ref: master
-    - name: increment counter
-      run: | 
-        git config --local user.email "gha@stummi.org"
-        git config --local user.name "GitHub Action"
-        echo $(($(cat counter) + 1)) > counter
-        git commit -m "increment counter" counter
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: do checkout
+        uses: actions/checkout@v1
+        with:
+          ref: master
+      - name: increment counter
+        run: |
+          git config --local user.email "example@example.com"
+          git config --local user.name "GitHub Action"
+          echo $(($(cat counter) + 1)) > counter
+          git commit -m "increment counter" counter
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: github.actions/inc-counter
