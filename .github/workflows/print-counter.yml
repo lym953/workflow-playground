@@ -1,11 +1,14 @@
 name: Print Counter
 
-on: [push]
+on:
+  push:
+    branches:
+      - "github.actions/inc-counter"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: cat counter
+      - uses: actions/checkout@v1
+      - name: Run a one-line script
+        run: cat counter
