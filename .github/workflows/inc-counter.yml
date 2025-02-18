@@ -20,6 +20,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GH_ACTION_PAT }}
+          # github_token: ${{ secrets.GH_ACTION_PAT }}
           branch: refs/heads/github-actions/inc-counter
           force: true
