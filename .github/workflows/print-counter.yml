@@ -3,7 +3,7 @@ name: Print Counter
 on:
   push:
     branches:
-      - 'github-actions/inc-counter'
+      - github-actions/inc-counter
 
 jobs:
   build:
